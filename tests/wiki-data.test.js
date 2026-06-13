@@ -55,6 +55,8 @@ test("Dolly commands from the shared chat are included", () => {
   assert.match(text, /Spin/i);
   assert.match(text, /Bed/i);
   assert.match(text, /Stay/i);
+  assert.match(text, /Wait/i);
+  assert.match(text, /slows her down/i);
   assert.match(text, /You're free/i);
   assert.match(text, /Come, Dolly/i);
   assert.match(text, /red leash.*coat closet/i);
