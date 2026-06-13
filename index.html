@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dollypedia: a friendly, large-print guide for watching Dolly and navigating the house.">
+    <link rel="canonical" href="https://swim-lang.github.io/dollywiki/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swim-lang.github.io/dollywiki/">
+    <meta property="og:title" content="Dollypedia">
+    <meta property="og:description" content="A friendly, large-print guide for Dolly, the house, and Sheriff Dolly's tiny mysteries.">
+    <meta property="og:image" content="https://swim-lang.github.io/dollywiki/assets/dolly-og.jpeg">
+    <meta property="og:image:alt" content="Dolly wearing a tiny cowboy hat">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dollypedia">
+    <meta name="twitter:description" content="A friendly, large-print guide for Dolly, the house, and Sheriff Dolly's tiny mysteries.">
+    <meta name="twitter:image" content="https://swim-lang.github.io/dollywiki/assets/dolly-og.jpeg">
+    <link rel="image_src" href="https://swim-lang.github.io/dollywiki/assets/dolly-og.jpeg">
+    <title>Dollypedia</title>
+    <link rel="stylesheet" href="styles.css?v=gary-warm-8">
+  </head>
+  <body id="top">
+    <header class="site-shell hero">
+      <section class="title-block" aria-labelledby="page-title">
+        <p class="eyebrow">House + Dolly field guide</p>
+        <h1 id="page-title">Dollypedia</h1>
+        <p class="subtitle">A friendly, large-print cheat sheet for Dolly, the house, and the tiny mysteries that are easier when they are written down.</p>
+      </section>
+      <figure class="hero-photo-card">
+        <img src="assets/dolly-western.jpeg" alt="Dolly wearing a tiny cowboy hat and red bandana">
+        <figcaption>Sheriff Dolly</figcaption>
+      </figure>
+    </header>
+
+    <section class="site-shell sticky-tools" aria-label="Search and contents">
+      <div class="toolbar">
+        <nav class="contents-strip" data-nav aria-label="Wiki sections"></nav>
+      </div>
+    </section>
+
+    <main class="site-shell layout">
+      <section aria-label="Wiki articles">
+        <div class="empty-state" data-empty hidden>
+          <h2>No article found</h2>
+          <p>Dollypedia has failed you in this very narrow moment. Try a simpler search term.</p>
+        </div>
+        <div class="article-grid" data-articles></div>
+      </section>
+    </main>
+
+    <button class="top-button" data-top type="button" aria-label="Back to top">Top</button>
+
+    <footer class="site-shell">
+      <p>Compiled from Sean's notes. Interpret all sass as affection.</p>
+    </footer>
+
+    <script src="wiki-data.js?v=gary-warm-8"></script>
+    <script src="script.js?v=gary-warm-8"></script>
+  </body>
+</html>
