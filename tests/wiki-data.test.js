@@ -106,6 +106,17 @@ test("Dolly notes mention lap energy, toy, and endless play", () => {
   assert.match(text, /play forever/i);
 });
 
+test("Dolly notes cover hot dogs, flexible feeding, and alone time", () => {
+  const dolly = articles.find((article) => article.id === "dolly");
+  const text = [dolly.summary, dolly.callout, ...dolly.facts].join(" ");
+
+  assert.ok(dolly);
+  assert.match(text, /hot dogs.*fridge/i);
+  assert.match(text, /feed her as much and as often/i);
+  assert.match(text, /100 pounds/i);
+  assert.match(text, /6-7 hours/i);
+});
+
 test("outside note allows door-open check-ins without frequent checking", () => {
   const outside = articles.find((article) => article.id === "outside");
   const text = [outside.summary, outside.callout, ...outside.facts].join(" ");
