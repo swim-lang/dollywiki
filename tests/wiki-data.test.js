@@ -57,8 +57,24 @@ test("Dolly commands from the shared chat are included", () => {
   assert.match(text, /Stay/i);
   assert.match(text, /You're free/i);
   assert.match(text, /Come, Dolly/i);
-  assert.match(text, /leashes.*coat closet/i);
+  assert.match(text, /red leash.*coat closet/i);
   assert.doesNotMatch(text, /run off the bed fast/i);
+});
+
+test("e-collar videos are included as optional references", () => {
+  const ecollar = articles.find((article) => article.id === "ecollar");
+  const text = [ecollar.summary, ecollar.callout, ...ecollar.facts].join(" ");
+
+  assert.ok(ecollar);
+  assert.match(text, /optional/i);
+  assert.match(text, /charging and syncing/i);
+  assert.match(text, /putting the collar on/i);
+  assert.match(text, /basics of using it/i);
+  assert.equal(ecollar.videos.length, 3);
+  assert.ok(ecollar.videos.every((video) => video.src.endsWith(".mp4")));
+  assert.ok(ecollar.videos.some((video) => /charging-syncing/.test(video.src)));
+  assert.ok(filterArticles("e-collar").some((article) => article.id === "ecollar"));
+  assert.ok(filterArticles("charging").some((article) => article.id === "ecollar"));
 });
 
 test("itinerary article reflects the cruise calendar", () => {
@@ -115,6 +131,20 @@ test("Dolly notes cover hot dogs, flexible feeding, and alone time", () => {
   assert.match(text, /feed her as much and as often/i);
   assert.match(text, /100 pounds/i);
   assert.match(text, /6-7 hours/i);
+});
+
+test("food note includes feeding toys, floor food, cues, and poop bags", () => {
+  const feeding = articles.find((article) => article.id === "feeding");
+  const text = [feeding.summary, feeding.callout, ...feeding.facts].join(" ");
+
+  assert.ok(feeding);
+  assert.match(text, /food.*fridge/i);
+  assert.match(text, /red and blue ball/i);
+  assert.match(text, /floor/i);
+  assert.match(text, /treat/i);
+  assert.match(text, /are you hungry/i);
+  assert.match(text, /poop bags.*coffee/i);
+  assert.ok(filterArticles("poop bags").some((article) => article.id === "feeding"));
 });
 
 test("outside note allows door-open check-ins without frequent checking", () => {

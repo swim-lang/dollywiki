@@ -19,6 +19,14 @@
   function renderArticle(article) {
     const tags = article.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
     const facts = article.facts.map((fact) => `<li>${escapeHtml(fact)}</li>`).join("");
+    const videos = (article.videos || [])
+      .map((video) => `
+        <figure class="video-card">
+          <video controls preload="metadata" playsinline src="${escapeHtml(video.src)}"></video>
+          <figcaption>${escapeHtml(video.title)}</figcaption>
+        </figure>
+      `)
+      .join("");
 
     return `
       <article class="wiki-card" id="${escapeHtml(article.id)}" data-card>
@@ -29,6 +37,7 @@
         <h2>${escapeHtml(article.title)}</h2>
         <p class="summary">${escapeHtml(article.summary)}</p>
         <ul class="facts">${facts}</ul>
+        ${videos ? `<div class="video-grid">${videos}</div>` : ""}
         <p class="callout">${escapeHtml(article.callout)}</p>
         <div class="tags" aria-label="Search tags">${tags}</div>
       </article>

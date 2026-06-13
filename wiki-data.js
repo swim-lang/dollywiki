@@ -26,6 +26,7 @@
         "You may not need to give her any trazodone at all.",
         "If you do give it, it can be taken with a little food if you can sneak it in, like a piece of hot dog or something similar.",
         "Hot dogs are in the fridge.",
+        "Dolly's food is in the fridge too.",
         "Feed her as much and as often as you like. She will be all right. If she is 100 pounds when Sean gets back, so be it.",
         "She can be left for around 6-7 hours if needed.",
         "Mostly, just keep things calm and give her space if she seems worked up.",
@@ -37,6 +38,22 @@
         "Fair warning: Dolly can play forever, or at least long enough to make forever seem possible.",
       ],
       callout: "If she seems overwhelmed, quiet and boring is perfect.",
+    },
+    {
+      id: "feeding",
+      title: "Food and Feeding",
+      kicker: "Snacks, dinner, and floor cuisine",
+      tags: ["food", "feeding", "fridge", "hot dogs", "red ball", "blue ball", "poop bags", "treat", "hungry"],
+      summary: "Dolly's food is in the fridge, and feeding can be easy and loose.",
+      facts: [
+        "Dolly's food is in the fridge.",
+        "Hot dogs are in the fridge too, if you want to use little pieces for meds or treats.",
+        "She has a little red and blue ball you can fill with food. Set it down and she will do her thing.",
+        "You can also just toss some food on the floor for her. It sounds silly, but it works.",
+        "Before feeding her, you can say \"treat\" or \"are you hungry?\" so she knows what is happening.",
+        "Poop bags are near the coffee bag by the coffee maker.",
+      ],
+      callout: "No need to make dinner fancy. Dolly is very open-minded about presentation.",
     },
     {
       id: "outside",
@@ -69,7 +86,7 @@
       id: "commands",
       title: "Dolly Commands",
       kicker: "A few useful words",
-      tags: ["commands", "no", "spin", "bed", "stay", "come", "walks", "leashes"],
+      tags: ["commands", "no", "spin", "bed", "stay", "come", "walks", "leashes", "red leash"],
       summary: "Dolly knows a handful of commands. A couple rounds can help get some energy out without doing too much physically.",
       facts: [
         "No: she knows \"no\" very well. This usually works better than over-explaining.",
@@ -78,11 +95,38 @@
         "Stay: she knows stay and can hold it well, especially when she is on her bed.",
         "Release command: say \"You're free!\" enthusiastically and give her a treat.",
         "Come: if you need her to come to you, say \"Come, Dolly.\"",
-        "Leashes are in the coat closet.",
+        "Her red leash is in the coat closet.",
         "Dolly can be iffy with other dogs, so give other dogs a wide berth. Some are fine, some are a full plot twist.",
         "If her leg looks okay and she seems comfortable, a walk or nearby park visit is fine. Keep it easy and don't push her too hard.",
       ],
       callout: "Best simple set: no, bed, stay, \"You're free!\", and \"Come, Dolly.\"",
+    },
+    {
+      id: "ecollar",
+      title: "E-Collar Videos",
+      kicker: "Optional gadget corner",
+      tags: ["e-collar", "ecollar", "collar", "charging", "syncing", "video", "training"],
+      summary: "Totally optional, but if you feel like using the e-collar, these short videos are here.",
+      facts: [
+        "No pressure to use the e-collar. This is only here if it feels useful.",
+        "The videos cover charging and syncing, putting the collar on, and the basics of using it.",
+        "If it starts feeling like too much, skip it and keep life simple.",
+      ],
+      videos: [
+        {
+          title: "Charging and syncing",
+          src: "assets/videos/e-collar-charging-syncing.mp4",
+        },
+        {
+          title: "Putting the collar on",
+          src: "assets/videos/e-collar-putting-it-on.mp4",
+        },
+        {
+          title: "How to use it",
+          src: "assets/videos/e-collar-using-it.mp4",
+        },
+      ],
+      callout: "Optional means optional. Dolly will not be filing a technology compliance report.",
     },
     {
       id: "entry",
@@ -187,6 +231,7 @@
       article.callout,
       article.tags.join(" "),
       article.facts.join(" "),
+      (article.videos || []).map((video) => [video.title, video.src].join(" ")).join(" "),
     ].join(" "));
   }
 

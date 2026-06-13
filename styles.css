@@ -318,6 +318,37 @@ h1 {
   box-shadow: 4px 4px 0 rgba(154, 106, 60, 0.3);
 }
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.video-card {
+  margin: 0;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  border-radius: 6px;
+  background: #111111;
+}
+
+.video-card figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
