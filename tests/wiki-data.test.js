@@ -74,6 +74,7 @@ test("e-collar videos are included as optional references", () => {
   assert.match(text, /basics of using it/i);
   assert.equal(ecollar.videos.length, 3);
   assert.ok(ecollar.videos.every((video) => video.src.endsWith(".mp4")));
+  assert.ok(ecollar.videos.every((video) => video.poster && video.poster.endsWith(".svg")));
   assert.ok(ecollar.videos.some((video) => /charging-syncing/.test(video.src)));
   assert.ok(filterArticles("e-collar").some((article) => article.id === "ecollar"));
   assert.ok(filterArticles("charging").some((article) => article.id === "ecollar"));

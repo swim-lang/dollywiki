@@ -117,14 +117,17 @@
         {
           title: "Charging and syncing",
           src: "assets/videos/e-collar-charging-syncing.mp4",
+          poster: "assets/videos/e-collar-charging-syncing-poster.svg",
         },
         {
           title: "Putting the collar on",
           src: "assets/videos/e-collar-putting-it-on.mp4",
+          poster: "assets/videos/e-collar-putting-it-on-poster.svg",
         },
         {
           title: "How to use it",
           src: "assets/videos/e-collar-using-it.mp4",
+          poster: "assets/videos/e-collar-using-it-poster.svg",
         },
       ],
       callout: "Optional means optional. Dolly will not be filing a technology compliance report.",

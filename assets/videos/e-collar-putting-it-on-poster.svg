@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280" role="img" aria-labelledby="title desc">
+  <title id="title">Putting the e-collar on</title>
+  <desc id="desc">Text poster thumbnail for an e-collar instruction video.</desc>
+  <defs>
+    <pattern id="diamonds" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M70 20 L120 70 L70 120 L20 70 Z" fill="none" stroke="#dfd4bd" stroke-width="5" opacity="0.45"/>
+      <circle cx="70" cy="70" r="8" fill="#dfd4bd" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="1280" fill="#fffaf0"/>
+  <rect width="720" height="1280" fill="url(#diamonds)"/>
+  <rect x="52" y="64" width="616" height="1152" rx="28" fill="#fffdf8" stroke="#9b5d42" stroke-width="8"/>
+  <rect x="86" y="96" width="548" height="1088" rx="18" fill="none" stroke="#dfd4bd" stroke-width="4" stroke-dasharray="18 16"/>
+  <text x="360" y="402" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#7b3f2f" font-weight="700">E-Collar</text>
+  <text x="360" y="482" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#7b3f2f" font-weight="700">Video</text>
+  <line x1="190" y1="560" x2="530" y2="560" stroke="#d6a257" stroke-width="8" stroke-linecap="round"/>
+  <text x="360" y="664" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#2f2924" font-weight="900">Putting</text>
+  <text x="360" y="736" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#2f2924" font-weight="900">the Collar</text>
+  <text x="360" y="812" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#6d6256" font-weight="800">on Dolly</text>
+  <circle cx="360" cy="950" r="56" fill="#9b5d42"/>
+  <path d="M342 918 L342 982 L394 950 Z" fill="#fffaf0"/>
+</svg>

@@ -20,12 +20,15 @@
     const tags = article.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
     const facts = article.facts.map((fact) => `<li>${escapeHtml(fact)}</li>`).join("");
     const videos = (article.videos || [])
-      .map((video) => `
+      .map((video) => {
+        const poster = video.poster ? ` poster="${escapeHtml(video.poster)}"` : "";
+        return `
         <figure class="video-card">
-          <video controls preload="metadata" playsinline src="${escapeHtml(video.src)}"></video>
+          <video controls preload="metadata" playsinline src="${escapeHtml(video.src)}"${poster}></video>
           <figcaption>${escapeHtml(video.title)}</figcaption>
         </figure>
-      `)
+      `;
+      })
       .join("");
 
     return `
