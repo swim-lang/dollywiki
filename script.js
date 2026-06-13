@@ -2,6 +2,8 @@
   const wiki = window.DOLLY_WIKI;
   const articleGrid = document.querySelector("[data-articles]");
   const navList = document.querySelector("[data-nav]");
+  const searchInput = document.querySelector("[data-search]");
+  const resultCount = document.querySelector("[data-result-count]");
   const emptyState = document.querySelector("[data-empty]");
   const topButton = document.querySelector("[data-top]");
 
@@ -39,11 +41,17 @@
       .join("");
   }
 
-  function renderArticles() {
-    articleGrid.innerHTML = wiki.articles.map(renderArticle).join("");
-    renderNav(wiki.articles);
-    emptyState.hidden = true;
+  function renderArticles(query) {
+    const matches = wiki.filterArticles(query);
+    articleGrid.innerHTML = matches.map(renderArticle).join("");
+    renderNav(matches.length ? matches : wiki.articles);
+    resultCount.textContent = matches.length === 1 ? "1 article" : `${matches.length} articles`;
+    emptyState.hidden = matches.length > 0;
   }
+
+  searchInput.addEventListener("input", (event) => {
+    renderArticles(event.target.value);
+  });
 
   topButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,5 +61,5 @@
     topButton.classList.toggle("is-visible", window.scrollY > 500);
   });
 
-  renderArticles();
+  renderArticles("");
 })();

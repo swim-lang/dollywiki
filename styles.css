@@ -161,6 +161,45 @@ h1 {
   backdrop-filter: blur(10px);
 }
 
+.search-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-wrap input {
+  width: 100%;
+  min-height: 50px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.05rem;
+  padding: 0 16px;
+  outline: none;
+  box-shadow: 3px 3px 0 rgba(154, 106, 60, 0.28);
+}
+
+.search-wrap input:focus {
+  border-color: var(--bandana);
+  box-shadow: 3px 3px 0 rgba(185, 49, 49, 0.24);
+}
+
+.result-pill {
+  min-width: 92px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+}
+
 .contents-strip {
   display: flex;
   gap: 8px;
@@ -205,7 +244,7 @@ h1 {
   background: var(--paper);
   padding: 34px;
   box-shadow: 0 10px 26px rgba(34, 33, 31, 0.08);
-  scroll-margin-top: 96px;
+  scroll-margin-top: 150px;
 }
 
 .wiki-card:nth-child(4n + 1) {
@@ -379,12 +418,20 @@ footer {
     font-size: 2.7rem;
   }
 
+  .search-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .result-pill {
+    width: fit-content;
+  }
+
   .contents-strip a {
     font-size: 0.95rem;
     padding: 7px 10px;
   }
 
   .wiki-card {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 190px;
   }
 }
